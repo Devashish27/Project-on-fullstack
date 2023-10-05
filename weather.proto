@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package weather;
+
+service AuthService {
+  rpc isAccessTokenValid (TokenRequest) returns (TokenValidationResponse);
+}
+
+message TokenRequest {
+  string token = 1;
+}
+
+message TokenValidationResponse {
+  bool valid = 1;
+  string error = 2;
+}
